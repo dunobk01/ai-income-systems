@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Free: The AI Stack That Built a Real Income System in 7 Days — AI Income Systems Lab</title>
+<meta name="description" content="Get the exact 5-tool AI stack and step-by-step blueprint used to build real digital income systems. Free guide, no fluff, no fake income claims."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0e0e0e;
+  --ink2: #3a3a3a;
+  --ink3: #7a7a7a;
+  --paper: #f7f5f0;
+  --white: #ffffff;
+  --accent: #e84b1a;
+  --accent2: #ff6b35;
+  --accent-pale: #fef0eb;
+  --green: #1a7a3a;
+  --green-pale: #edf7f1;
+  --border: #e0ddd7;
+  --card: #ffffff;
+  --mono: 'DM Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:960px;margin:0 auto;padding:0 24px;}
+.container-sm{max-width:680px;margin:0 auto;padding:0 24px;}
+
+/* ── NAV ── */
+nav{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+  position:sticky;top:0;z-index:100;
+}
+.nav-inner{
+  max-width:960px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:17px;
+  color:var(--ink);text-decoration:none;
+  letter-spacing:-0.5px;
+}
+.logo span{color:var(--accent);}
+.nav-cta{
+  background:var(--accent);color:var(--white);
+  border:none;padding:9px 20px;border-radius:6px;
+  font-family:'DM Sans',sans-serif;font-weight:500;font-size:14px;
+  cursor:pointer;text-decoration:none;
+  transition:background .18s,transform .12s;
+}
+.nav-cta:hover{background:#c93e10;transform:translateY(-1px);}
+
+/* ── URGENCY BAR ── */
+.urgency-bar{
+  background:var(--ink);color:var(--white);
+  text-align:center;padding:10px 24px;
+  font-size:13px;font-weight:500;
+  letter-spacing:0.01em;
+}
+.urgency-bar span{color:var(--accent2);}
+
+/* ── HERO ── */
+.hero{
+  padding:72px 0 60px;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;top:-80px;right:-80px;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(232,75,26,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-pale);
+  border:1px solid rgba(232,75,26,.2);
+  border-radius:40px;
+  padding:5px 14px;
+  font-size:12px;font-weight:500;color:var(--accent);
+  letter-spacing:0.04em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+h1{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(32px,5vw,54px);
+  line-height:1.08;
+  letter-spacing:-1.5px;
+  color:var(--ink);
+  margin-bottom:20px;
+  max-width:780px;
+}
+h1 em{
+  font-style:normal;
+  color:var(--accent);
+  position:relative;
+}
+h1 em::after{
+  content:'';
+  position:absolute;
+  bottom:2px;left:0;right:0;
+  height:3px;
+  background:var(--accent);
+  opacity:.35;
+  border-radius:2px;
+}
+.hero-sub{
+  font-size:18px;
+  color:var(--ink2);
+  max-width:560px;
+  line-height:1.6;
+  margin-bottom:36px;
+  font-weight:300;
+}
+.hero-sub strong{color:var(--ink);font-weight:500;}
+
+/* ── OPT-IN FORM ── */
+.optin-box{
+  background:var(--paper);
+  border:1.5px solid var(--border);
+  border-radius:14px;
+  padding:28px 32px;
+  max-width:520px;
+  position:relative;
+}
+.optin-box::before{
+  content:'FREE GUIDE';
+  position:absolute;top:-12px;left:24px;
+  background:var(--accent);color:var(--white);
+  font-family:'Syne',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  padding:3px 12px;border-radius:4px;
+}
+.optin-title{
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:18px;
+  margin-bottom:6px;letter-spacing:-0.3px;
+}
+.optin-sub{font-size:13px;color:var(--ink3);margin-bottom:18px;line-height:1.5;}
+.optin-form{display:flex;flex-direction:column;gap:10px;}
+.optin-form input{
+  width:100%;
+  padding:13px 16px;
+  border:1.5px solid var(--border);
+  border-radius:8px;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  background:var(--white);
+  color:var(--ink);
+  outline:none;
+  transition:border-color .18s;
+}
+.optin-form input:focus{border-color:var(--accent);}
+.optin-form input::placeholder{color:var(--ink3);}
+.btn-primary{
+  background:var(--accent);color:var(--white);
+  border:none;padding:14px 24px;
+  border-radius:8px;
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:15px;
+  cursor:pointer;
+  transition:background .18s,transform .12s;
+  letter-spacing:0.01em;
+  text-align:center;
+}
+.btn-primary:hover{background:#c93e10;transform:translateY(-1px);}
+.privacy-note{font-size:12px;color:var(--ink3);text-align:center;margin-top:8px;}
+
+.hero-proof{
+  margin-top:40px;
+  display:flex;align-items:center;gap:20px;
+  flex-wrap:wrap;
+}
+.proof-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;color:var(--ink3);
+  font-weight:400;
+}
+.proof-item::before{content:'✓';color:var(--green);font-weight:600;font-size:14px;}
+
+/* ── WHAT YOU GET (lead magnet preview) ── */
+.section{padding:64px 0;}
+.section-label{
+  font-family:'Syne',sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+h2{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(26px,4vw,40px);
+  line-height:1.1;
+  letter-spacing:-1px;
+  color:var(--ink);
+  margin-bottom:14px;
+}
+.section-sub{
+  font-size:17px;color:var(--ink2);
+  max-width:540px;line-height:1.6;
+  font-weight:300;
+  margin-bottom:40px;
+}
+.cards-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+.feature-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:24px;
+  transition:border-color .18s,transform .18s;
+}
+.feature-card:hover{border-color:rgba(232,75,26,.3);transform:translateY(-2px);}
+.card-num{
+  font-family:'Syne',sans-serif;
+  font-size:11px;font-weight:800;
+  color:var(--accent);
+  letter-spacing:.06em;
+  margin-bottom:10px;
+  opacity:.7;
+}
+.card-title{
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:16px;
+  margin-bottom:8px;letter-spacing:-0.2px;
+}
+.card-body{font-size:13px;color:var(--ink2);line-height:1.6;}
+
+/* ── WHAT'S INSIDE THE GUIDE ── */
+.guide-preview{
+  background:var(--ink);
+  border-radius:16px;
+  padding:40px;
+  color:var(--white);
+}
+.guide-preview h3{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:22px;
+  letter-spacing:-0.5px;
+  margin-bottom:8px;
+}
+.guide-preview .gp-sub{
+  font-size:14px;color:rgba(255,255,255,.55);
+  margin-bottom:28px;
+}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.checklist li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14px;color:rgba(255,255,255,.85);
+  line-height:1.5;
+}
+.checklist li::before{
+  content:'→';
+  color:var(--accent2);
+  font-weight:700;
+  flex-shrink:0;
+  margin-top:1px;
+}
+.checklist li strong{color:var(--white);font-weight:500;}
+
+/* ── SOCIAL PROOF ── */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.testi-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:22px;
+}
+.testi-stars{color:#f5a623;font-size:14px;margin-bottom:10px;letter-spacing:2px;}
+.testi-text{font-size:14px;color:var(--ink2);line-height:1.65;margin-bottom:14px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--accent-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--accent);
+}
+.testi-name{font-size:13px;font-weight:500;color:var(--ink);}
+.testi-role{font-size:12px;color:var(--ink3);}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  background:var(--white);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:36px 0;
+}
+.stats-inner{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:24px;
+  text-align:center;
+}
+.stat-num{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:34px;
+  color:var(--ink);letter-spacing:-1px;
+  display:block;
+}
+.stat-num span{color:var(--accent);}
+.stat-label{font-size:13px;color:var(--ink3);}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:center;}
+.about-avatar{
+  width:100%;aspect-ratio:1;
+  background:var(--ink);
+  border-radius:14px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  color:var(--white);
+  font-family:'Syne',sans-serif;
+}
+.about-avatar-letter{font-size:72px;font-weight:800;opacity:.15;}
+.about-avatar-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);}
+.about-text h3{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:26px;letter-spacing:-0.5px;margin-bottom:12px;
+}
+.about-text p{font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:14px;}
+
+/* ── COURSE TEASER ── */
+.course-teaser{
+  background:var(--ink);
+  border-radius:16px;
+  padding:48px;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  align-items:center;
+}
+.course-teaser h3{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:28px;color:var(--white);
+  letter-spacing:-0.5px;margin-bottom:14px;
+  line-height:1.15;
+}
+.course-teaser p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:24px;}
+.btn-white{
+  background:var(--white);color:var(--ink);
+  border:none;padding:14px 26px;
+  border-radius:8px;
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:15px;cursor:pointer;
+  transition:opacity .18s,transform .12s;
+  text-decoration:none;display:inline-block;
+}
+.btn-white:hover{opacity:.9;transform:translateY(-1px);}
+.tier-pills{display:flex;flex-direction:column;gap:10px;}
+.tier-pill{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  padding:14px 18px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.tier-pill.featured{
+  background:rgba(232,75,26,.12);
+  border-color:rgba(232,75,26,.4);
+}
+.tier-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);}
+.tier-desc{font-size:12px;color:rgba(255,255,255,.45);}
+.tier-price{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--white);}
+.tier-price.featured-price{color:var(--accent2);}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  background:var(--white);
+  border-top:1px solid var(--border);
+  padding:72px 0;
+  text-align:center;
+}
+.final-cta h2{max-width:600px;margin:0 auto 16px;}
+.final-cta p{font-size:16px;color:var(--ink2);max-width:460px;margin:0 auto 32px;font-weight:300;}
+.optin-inline{
+  display:flex;gap:10px;max-width:460px;margin:0 auto;
+  flex-wrap:wrap;
+}
+.optin-inline input{
+  flex:1;min-width:200px;
+  padding:13px 16px;
+  border:1.5px solid var(--border);
+  border-radius:8px;
+  font-family:'DM Sans',sans-serif;font-size:15px;
+  background:var(--paper);color:var(--ink);outline:none;
+  transition:border-color .18s;
+}
+.optin-inline input:focus{border-color:var(--accent);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  color:rgba(255,255,255,.5);
+  padding:32px 0;
+  text-align:center;
+  font-size:13px;
+}
+footer a{color:rgba(255,255,255,.6);text-decoration:none;}
+footer a:hover{color:var(--white);}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:14px;}
+
+/* ── SUCCESS STATE ── */
+.success-msg{
+  display:none;
+  background:var(--green-pale);
+  border:1px solid rgba(26,122,58,.2);
+  border-radius:10px;
+  padding:20px 24px;
+  text-align:center;
+}
+.success-msg.show{display:block;}
+.success-msg h4{
+  font-family:'Syne',sans-serif;font-weight:700;
+  color:var(--green);font-size:17px;margin-bottom:4px;
+}
+.success-msg p{font-size:14px;color:var(--green);opacity:.8;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .about-grid{grid-template-columns:1fr;}
+  .about-avatar{display:none;}
+  .course-teaser{grid-template-columns:1fr;padding:32px 24px;}
+  .optin-box{padding:22px 20px;}
+  nav .nav-cta{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  🔥 New cohort open · <span>Free guide: The 5-Tool AI Stack That Builds Real Income Systems</span> — grab it below
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="https://ai-income-systems.com">AI Income <span>Systems</span> Lab</a>
+    <a class="nav-cta" href="https://ai-income-systems.com/pricing">See Pricing</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Free Download · No spam, ever</div>
+    <h1>Stop watching AI tutorials.<br/><em>Start shipping income systems.</em></h1>
+    <p class="hero-sub">
+      Get the free guide: <strong>The Exact 5-Tool AI Stack I Used to Build My First Real Digital Income System</strong> — step-by-step, no fluff, no fake income screenshots.
+    </p>
+
+    <div class="optin-box">
+      <div class="optin-title">Get the free guide — instant access</div>
+      <p class="optin-sub">Join our builders list. Unsubscribe anytime.</p>
+      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9525954/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9525954" data-uid="ac01a603ed" data-format="inline" data-version="5" style="background:transparent;box-shadow:none;padding:0;">
+        <div data-element="fields" class="seva-fields formkit-fields" style="display:flex;flex-direction:column;gap:10px;">
+          <div class="formkit-field">
+            <input class="formkit-input" name="email_address" placeholder="Your best email address" required type="email" style="width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;background:var(--white);color:var(--ink);outline:none;"/>
+          </div>
+          <button data-element="submit" class="formkit-submit" style="background:var(--accent);color:var(--white);border:none;padding:14px 24px;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;cursor:pointer;width:100%;">
+            <span>Send Me the Free Guide →</span>
+          </button>
+        </div>
+        <div class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></div>
+      </form>
+      <p class="privacy-note">🔒 Zero spam. Unsubscribe with one click anytime.</p>
+    </div>
+
+    <div class="hero-proof">
+      <div class="proof-item">No AI experience needed</div>
+      <div class="proof-item">Free tools covered</div>
+      <div class="proof-item">Ship in 7 days or less</div>
+      <div class="proof-item">No guru nonsense</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div><span class="stat-num">2,400<span>+</span></span><div class="stat-label">builders enrolled</div></div>
+      <div><span class="stat-num">11</span><div class="stat-label">modules, 90+ lessons</div></div>
+      <div><span class="stat-num">5</span><div class="stat-label">tools, one proven stack</div></div>
+      <div><span class="stat-num">7</span><div class="stat-label">days to your first system</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S IN THE GUIDE -->
+<section class="section">
+  <div class="container-sm">
+    <div class="section-label">Inside the free guide</div>
+    <h2>What you'll walk away with</h2>
+    <p class="section-sub">This isn't a "top 10 AI tools" listicle. It's a real breakdown of the exact stack, why each tool has a job, and how they connect into something that generates income.</p>
+
+    <div class="guide-preview">
+      <h3>The 5-Tool AI Stack for Real Income Systems</h3>
+      <p class="gp-sub">A free 12-page guide · Instant PDF download</p>
+      <ul class="checklist">
+        <li><span><strong>The full stack explained</strong> — ChatGPT, Claude, Perplexity, Lovable, and n8n. What each one does, when to use it, and what you'll break if you skip it.</span></li>
+        <li><span><strong>The income system blueprint</strong> — The exact 4-step framework: build a product → set up a funnel → automate delivery → drive traffic. Mapped out so you can follow it today.</span></li>
+        <li><span><strong>3 starter income systems</strong> — A digital product system, a local business service system, and a content monetization system. Pick the one that fits your situation and start there.</span></li>
+        <li><span><strong>Your 7-day launch checklist</strong> — Day-by-day action steps that take you from "no idea" to "first offer live." No fluff, just what to actually do.</span></li>
+        <li><span><strong>The 12 prompts that do 80% of the work</strong> — Copy-paste prompts for ChatGPT and Claude that handle product ideation, landing page copy, funnel planning, and outreach scripts.</span></li>
+        <li><span><strong>What NOT to build first</strong> — The 3 most common mistakes beginners make that waste weeks of effort. Skip these and you'll move 5x faster.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section" style="background:var(--white);padding-top:48px;padding-bottom:48px;">
+  <div class="container">
+    <div class="section-label">Who this is for</div>
+    <h2>You're in the right place if…</h2>
+    <div class="cards-3" style="margin-top:28px;">
+      <div class="feature-card">
+        <div class="card-num">01 —</div>
+        <div class="card-title">You've tried AI tools but made $0</div>
+        <div class="card-body">You've played with ChatGPT. You've watched YouTube videos. Nothing clicked into a real income stream. That's a systems problem, not a talent problem.</div>
+      </div>
+      <div class="feature-card">
+        <div class="card-num">02 —</div>
+        <div class="card-title">You're tired of theory-only courses</div>
+        <div class="card-body">You've bought the course, watched 4 hours of slides, and still don't know what to actually build or sell. This is different — you leave with real things shipped.</div>
+      </div>
+      <div class="feature-card">
+        <div class="card-num">03 —</div>
+        <div class="card-title">You want to build, not just learn</div>
+        <div class="card-body">You'd rather spend 2 hours building something real than 10 hours taking notes. These systems are designed to be followed, not collected in Notion.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">What builders are saying</div>
+    <h2>Real results, no fluff</h2>
+    <div class="testimonials" style="margin-top:28px;">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I've bought 4 AI courses this year. This is the only one where I actually shipped something at the end. Had my first digital product live in 5 days."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div><div class="testi-name">Marcus R.</div><div class="testi-role">Side hustler, Texas</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The n8n automation module alone was worth 10x the price. I set up a system that delivers my digital products and follows up with buyers automatically. Wild."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JK</div>
+          <div><div class="testi-name">Jasmine K.</div><div class="testi-role">Freelancer turned builder</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I was skeptical because I've seen so many fake 'make money with AI' things. This is the real deal. Practical, no nonsense, and I landed my first local AI client in week 3."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">DL</div>
+          <div><div class="testi-name">Diego L.</div><div class="testi-role">Small business owner</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" style="background:var(--white);padding-top:56px;padding-bottom:56px;">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-avatar">
+        <div class="about-avatar-letter">A</div>
+        <div class="about-avatar-label">Founder</div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Who built this</div>
+        <h3>I built this course with the exact tools inside it.</h3>
+        <p>AI Income Systems Lab wasn't made by an agency or a team. It was built by one person using ChatGPT to write the copy, Claude to structure the curriculum, Perplexity to validate the market, Lovable to build the app, and n8n to automate the delivery.</p>
+        <p>This site you're on right now? It's the proof of concept. I didn't just teach the system — I ran it. And I built this course to show you exactly how to run it yourself, step by step, without needing to be technical or have any experience with AI.</p>
+        <p style="font-weight:500;color:var(--ink);">No fake income screenshots. No $5,000 mastermind upsell. Just the systems that actually work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE TEASER -->
+<section class="section" style="background:var(--paper);">
+  <div class="container">
+    <div class="course-teaser">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;">The full course</div>
+        <h3>Ready to go deeper? The full lab is waiting.</h3>
+        <p>11 modules. 90+ lessons. Interactive builders. Prompt library. n8n templates. Local business service kit. One-time payment, lifetime access. Three tiers starting at $29.</p>
+        <a href="https://ai-income-systems.com/pricing" class="btn-white">See Pricing & Tiers →</a>
+      </div>
+      <div class="tier-pills">
+        <div class="tier-pill">
+          <div><div class="tier-name">Starter Lab</div><div class="tier-desc">Course + prompt library</div></div>
+          <div class="tier-price">$29</div>
+        </div>
+        <div class="tier-pill featured">
+          <div><div class="tier-name">Builder Lab ✦</div><div class="tier-desc">+ builders + n8n workflows</div></div>
+          <div class="tier-price featured-price">$79</div>
+        </div>
+        <div class="tier-pill">
+          <div><div class="tier-name">Pro Systems Lab</div><div class="tier-desc">+ local kit + templates</div></div>
+          <div class="tier-price">$149</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-label">Get started free</div>
+    <h2>Start with the free guide. Build from there.</h2>
+    <p>No credit card. No pressure. Just the systems framework and your first action steps — free, in your inbox in 60 seconds.</p>
+    <form action="https://app.kit.com/forms/9525954/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9525954" data-uid="ac01a603ed" data-format="inline" data-version="5" style="background:transparent;box-shadow:none;padding:0;max-width:460px;margin:0 auto;">
+      <div data-element="fields" class="seva-fields formkit-fields" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <input class="formkit-input" name="email_address" placeholder="Your email address" required type="email" style="flex:1;min-width:200px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;background:var(--paper);color:var(--ink);outline:none;"/>
+        <button data-element="submit" class="formkit-submit" style="background:var(--accent);color:var(--white);border:none;padding:14px 24px;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;cursor:pointer;">
+          <span>Get Free Guide →</span>
+        </button>
+      </div>
+      <div class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></div>
+    </form>
+    <div id="footerSuccess" style="display:none;"></div>
+    <p style="margin-top:14px;font-size:12px;color:var(--ink3);">Join 2,400+ builders · Unsubscribe anytime · No spam ever</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://ai-income-systems.com">Home</a>
+      <a href="https://ai-income-systems.com/pricing">Pricing</a>
+      <a href="https://ai-income-systems.com/#curriculum">Curriculum</a>
+      <a href="https://ai-income-systems.com/#faq">FAQ</a>
+    </div>
+    <p>© 2026 AI Income Systems Lab · Built for builders, not gurus.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
