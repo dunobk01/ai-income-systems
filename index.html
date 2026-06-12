@@ -694,15 +694,11 @@ async function handleSubmit(e) {
   }
 
   try {
-    // Submit to Kit
-    await fetch(`https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`, {
+    // Submit to Kit via Netlify serverless function
+    await fetch('/.netlify/functions/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        api_key: KIT_API_KEY,
-        email: email,
-        first_name: name
-      })
+      body: JSON.stringify({ email: email, name: name })
     });
   } catch(err) {
     // Even if Kit fails, still redirect to PDF
