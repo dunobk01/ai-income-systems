@@ -668,45 +668,60 @@ footer a:hover{color:var(--white);}
 </footer>
 
 <script>
-const KIT_FORM_ID = '9525954';
-const KIT_API_KEY = 'NeXTLefrIhwfRSu5-9zecg';
 const PDF_URL = 'https://drive.google.com/file/d/1FR1aXc7qkqYvjt9j23nMD4M70GQNtfyL/view?usp=drive_link';
 
 async function handleSubmit(e) {
   e.preventDefault();
 
-  // Get email from whichever form was submitted
   const form = e.target;
   const emailInput = form.querySelector('input[type="email"]');
   const nameInput = form.querySelector('input[type="text"]');
   const btn = form.querySelector('button[type="submit"]');
 
-  const email = emailInput ? emailInput.value : '';
-  const name = nameInput ? nameInput.value : '';
+  const email = emailInput ? emailInput.value.trim() : '';
+  const name = nameInput ? nameInput.value.trim() : '';
 
   if (!email) return;
 
-  // Update button state
   if (btn) {
-    btn.textContent = 'Sending...';
+    btn.textContent = 'Grabbing your guide...';
     btn.style.opacity = '0.7';
     btn.disabled = true;
   }
 
-  try {
-    // Submit to Kit via Netlify serverless function
-    await fetch('/.netlify/functions/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, name: name })
-    });
-  } catch(err) {
-    // Even if Kit fails, still redirect to PDF
-    console.log('Kit error:', err);
+  // Create a hidden Kit form and submit it silently
+  const kitForm = document.createElement('form');
+  kitForm.method = 'POST';
+  kitForm.action = 'https://app.kit.com/forms/9525954/subscriptions';
+  kitForm.target = 'kit_iframe';
+  kitForm.style.display = 'none';
+
+  const emailField = document.createElement('input');
+  emailField.type = 'hidden';
+  emailField.name = 'email_address';
+  emailField.value = email;
+  kitForm.appendChild(emailField);
+
+  if (name) {
+    const nameField = document.createElement('input');
+    nameField.type = 'hidden';
+    nameField.name = 'fields[first_name]';
+    nameField.value = name;
+    kitForm.appendChild(nameField);
   }
 
-  // Always redirect to PDF regardless of Kit response
-  window.location.href = PDF_URL;
+  // Hidden iframe to catch Kit's response so page doesn't redirect
+  const iframe = document.createElement('iframe');
+  iframe.name = 'kit_iframe';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+  document.body.appendChild(kitForm);
+  kitForm.submit();
+
+  // Wait briefly then redirect to PDF
+  setTimeout(function() {
+    window.location.href = PDF_URL;
+  }, 800);
 }
 
 // Smooth scroll
