@@ -18,6 +18,16 @@ Email capture: Kit (ConvertKit)
 PDF delivery: Google Drive direct link
 Main site: Built on Lovable at ai-income-systems.com
 
+Environment variables
+
+The Netlify function netlify/functions/subscribe.js sends emails to Kit (ConvertKit). It reads the Kit API key from an environment variable — no key is stored in the repo.
+
+Set the API key in Netlify: Site settings → Environment variables → Add a variable
+Key: KIT_API_KEY (CONVERTKIT_API_KEY is also accepted as a fallback)
+Value: your Kit API key from https://app.kit.com (Settings → Advanced → API)
+
+The function returns HTTP 500 if the variable is not set.
+
 To update the landing page
 
 Edit index.html directly in GitHub
