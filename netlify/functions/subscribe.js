@@ -5,10 +5,20 @@ exports.handler = async function(event, context) {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
+  const apiKey = process.env.KIT_API_KEY || process.env.CONVERTKIT_API_KEY;
+  if (!apiKey) {
+    console.error('Missing KIT_API_KEY (or CONVERTKIT_API_KEY) environment variable');
+    return {
+      statusCode: 500,
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      body: JSON.stringify({ error: 'Server is not configured for email subscriptions.' })
+    };
+  }
+
   const { email, name } = JSON.parse(event.body);
 
   const data = JSON.stringify({
-    api_key: 'NeXTLefrIhwfRSu5-9zecg',
+    api_key: apiKey,
     email: email,
     first_name: name || ''
   });
